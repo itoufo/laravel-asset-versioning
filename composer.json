@@ -1,5 +1,5 @@
 {
-    "name": "escapework/laravel-asset-versioning",
+    "name": "itoufo/laravel-asset-versioning",
     "description": "Package to help you avoid cache by versioning your assets",
     "license": "MIT", 
 
