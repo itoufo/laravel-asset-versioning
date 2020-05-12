@@ -87,7 +87,15 @@ class Asset
                 continue;
             }
 
-            $resource = str_replace($type['origin_dir'], $type['dist_dir'].'/' . $version, $path);
+            if(mb_substr($type['origin_dir'], -1) !== '/'){
+                $type['origin_dir'] = $type['origin_dir'] . "/";
+
+            }
+            if(mb_substr($type['dist_dir'], -1) !== '/'){
+                $type['dist_dir'] = $type['dist_dir'] . "/";
+            }
+
+            $resource = str_replace($type['origin_dir'], $type['dist_dir'] . $version, $path);
             $this->addHTTP2Link($resource, $extension);
 
             return $resource;
